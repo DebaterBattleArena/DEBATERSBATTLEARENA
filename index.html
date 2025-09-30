@@ -3,59 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DBA | Debater Battle Arena - Fictional Battle League</title>
+    <title>DBA: Debater Battle Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <script src="assets/js/data.js" defer></script>
-    <script src="assets/js/script.js" defer></script>
 </head>
 <body>
 
-    <div class="floating-ticket-banner" id="ticket-banner">
-        <div class="ticket-info">
-            EVENT BERIKUTNYA: **DBA 3** - Siap Bertarung!
-        </div>
-        <a href="#" class="buy-tickets-btn">Tiket</a>
-        <button class="close-banner-btn" onclick="document.getElementById('ticket-banner').style.display='none';">
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-
     <header class="main-header">
         <div class="container header-content">
-            <a href="index.html" class="logo" style="font-family: var(--font-primary);">DBA</a>
-            
+            <a href="index.html" class="logo">DBA</a>
             <nav class="desktop-nav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li class="desktop-dropdown">
-                        <a href="events.html">Events <i class="fas fa-chevron-down"></i></a>
-                        <ul class="submenu-desktop">
-                            <li><a href="events.html#upcoming">Upcoming Events</a></li>
-                            <li><a href="events.html#past">Past Events</a></li>
-                        </ul>
-                    </li>
-                    <li class="desktop-dropdown">
-                        <a href="debaters.html">Debaters <i class="fas fa-chevron-down"></i></a>
-                        <ul class="submenu-desktop">
-                            <li><a href="rankings.html">Rankings</a></li>
-                            <li><a href="debaters.html">All Profiles</a></li>
-                        </ul>
-                    </li>
-                    <li class="desktop-dropdown">
-                        <a href="news.html">Media <i class="fas fa-chevron-down"></i></a>
-                        <ul class="submenu-desktop">
-                            <li><a href="news.html#news">Latest News</a></li>
-                            <li><a href="news.html#videos">Highlights Videos</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="events.html">Acara</a></li>
+                    <li><a href="debaters.html">Debater</a></li>
+                    <li><a href="rankings.html">Peringkat</a></li>
                 </ul>
             </nav>
-
             <div class="header-actions">
-                <button title="Search"><i class="fas fa-search"></i></button>
-                <button class="menu-toggle-btn" id="menu-toggle-btn">
+                <button class="menu-toggle-btn" aria-label="Toggle Menu">
                     <i class="fas fa-bars menu-icon-open"></i>
                     <i class="fas fa-times menu-icon-close"></i>
                 </button>
@@ -63,206 +30,109 @@
         </div>
     </header>
 
-    <nav class="mobile-nav" id="mobile-nav">
+    <nav class="mobile-nav">
         <ul class="mobile-menu-list">
-            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-            <li class="mobile-dropdown-toggle">
-                <a href="events.html" data-submenu="events-submenu"><i class="fas fa-calendar-alt"></i> Events <i class="fas fa-chevron-down"></i></a>
-                <ul class="mobile-submenu" id="events-submenu">
-                    <li><a href="events.html#upcoming">Upcoming Events</a></li>
-                    <li><a href="events.html#past">Past Events</a></li>
-                </ul>
-            </li>
-            <li class="mobile-dropdown-toggle">
-                <a href="debaters.html" data-submenu="debaters-submenu"><i class="fas fa-users"></i> Debaters <i class="fas fa-chevron-down"></i></a>
-                <ul class="mobile-submenu" id="debaters-submenu">
-                    <li><a href="rankings.html">Rankings</a></li>
-                    <li><a href="debaters.html">All Profiles</a></li>
-                </ul>
-            </li>
-             <li class="mobile-dropdown-toggle">
-                <a href="news.html" data-submenu="media-submenu"><i class="fas fa-photo-video"></i> Media <i class="fas fa-chevron-down"></i></a>
-                <ul class="mobile-submenu" id="media-submenu">
-                    <li><a href="news.html#news">Latest News</a></li>
-                    <li><a href="news.html#videos">Highlights Videos</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Acara</a></li>
+            <li><a href="debaters.html"><i class="fas fa-users"></i> Debater</a></li>
+            <li><a href="rankings.html"><i class="fas fa-trophy"></i> Peringkat</a></li>
         </ul>
         <div class="mobile-social-footer">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
     </nav>
 
     <main>
-        
         <section class="hero-section">
-            <article class="main-story-card image-error-placeholder">
-                <img src="assets/img/hero-main.jpg" alt="Main Story" class="main-story-img">
+            <div class="main-story-card">
+                <img src="https://placehold.co/800x500/0d0d0d/ffc400?text=DBA+3" alt="DBA 3 Main Event" class="main-story-img">
                 <div class="story-overlay">
-                    <span class="category-tag">News</span>
-                    <h1>LIANX vs RANZT: 'SUPER MAIN EVENT' di DBA 3 Akan Menjadi Penentu Raja Mid Tier!</h1>
-                    <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    <span class="category-tag">ACARA MENDATANG</span>
+                    <h1>DBA 3: SUPER MAIN EVENT - LIANX VS RANZT</h1>
+                    <a href="events.html" class="read-more-btn">Lihat Jadwal Lengkap <i class="fas fa-arrow-right"></i></a>
                 </div>
-            </article>
-
+            </div>
             <div class="sub-story-grid">
-                <a href="#" class="sub-story-card image-error-placeholder">
-                    <img src="assets/img/sub-story-1.jpg" alt="Sub Story 1" class="sub-story-img">
+                <div class="sub-story-card">
+                     <img src="https://placehold.co/400x150/1a1a1a/ffffff?text=Ranzt" alt="Ranzt Mid Tier King" class="sub-story-img">
                     <div class="story-info">
-                        <span class="category-tag">Video</span>
-                        <h2>AARON Dominasi HYRUKI di Main Event DBA Special Match</h2>
+                        <h2><a href="rankings.html">RANZT DINOBATKAN SEBAGAI RAJA DIVISI MID-TIER</a></h2>
                     </div>
-                </a>
-                <a href="#" class="sub-story-card image-error-placeholder">
-                    <img src="assets/img/sub-story-2.jpg" alt="Sub Story 2" class="sub-story-img">
+                </div>
+                <div class="sub-story-card">
+                    <img src="https://placehold.co/400x150/1a1a1a/ffffff?text=Aaron" alt="Aaron's Dominance" class="sub-story-img">
                     <div class="story-info">
-                        <span class="category-tag">News</span>
-                        <h2>Profil Debater: Kariz, Bintang Baru Divisi High Tier dari Indonesia</h2>
+                        <h2><a href="debaters.html">DOMINASI AARON: REKOR SEMPURNA 2-0 DI PANGGUNG INTERNASIONAL</a></h2>
                     </div>
-                </a>
-                <a href="#" class="sub-story-card image-error-placeholder">
-                    <img src="assets/img/sub-story-3.jpg" alt="Sub Story 3" class="sub-story-img">
+                </div>
+                <div class="sub-story-card">
+                    <img src="https://placehold.co/400x150/1a1a1a/ffffff?text=High+Tier" alt="High Tier Division" class="sub-story-img">
                     <div class="story-info">
-                        <span class="category-tag">Rankings</span>
-                        <h2>Update Peringkat: Siapa yang Mendekati Tahta Raja Divisi?</h2>
+                        <h2><a href="rankings.html">DIVISI HIGH-TIER MEMANAS, SIAPA PENANTANG LIANX SELANJUTNYA?</a></h2>
                     </div>
-                </a>
+                </div>
             </div>
         </section>
-        
+
         <div class="container">
             <div class="coming-soon-banner">
                 <div class="timer-display">
-                    <div class="timer-label">DBA 3 LIVE</div>
-                    <div class="countdown-time" id="countdown-timer">
-                        <div class="time-unit"><span id="days">00</span><span class="unit-label">Days</span></div>
-                        <div class="time-unit"><span id="hours">00</span><span class="unit-label">Hours</span></div>
-                        <div class="time-unit"><span id="minutes">00</span><span class="unit-label">Mins</span></div>
-                        <div class="time-unit"><span id="seconds">00</span><span class="unit-label">Secs</span></div>
+                    <span class="timer-label">DBA 3 DIMULAI DALAM:</span>
+                    <div class="countdown-time">
+                        <div class="time-unit">28 <span class="unit-label">HARI</span></div>
+                        <div class="time-unit">10 <span class="unit-label">JAM</span></div>
+                        <div class="time-unit">45 <span class="unit-label">MENIT</span></div>
                     </div>
                 </div>
-                <div style="display:flex; align-items: center; gap: 20px;">
-                    <a href="events.html#past" class="past-events-link">
-                        Past Events <i class="fas fa-history"></i>
-                    </a>
-                    <a href="#" class="buy-tickets-btn">Buy Tickets</a>
-                </div>
+                <a href="events.html" class="buy-tickets-btn">LIHAT JADWAL</a>
             </div>
         </div>
-        
-        <section class="featured-section container">
-            <h2>Featured Debater: AARON</h2>
-            <div class="featured-content">
-                <img src="assets/img/featured-aaron.jpg" alt="Featured Debater Aaron" class="featured-img">
-                <div class="featured-text-box">
-                    <span class="category-tag">High Tier</span>
-                    <h3>The American Nightmare</h3>
-                    <a href="debaters.html#aaron" class="read-more-btn">Lihat Profil <i class="fas fa-arrow-right"></i></a>
+
+        <div class="container">
+            <h2 class="section-title">Berita & Sorotan Terbaru</h2>
+            <div class="videos-section">
+                <div class="video-grid">
+                    <div class="video-item">
+                        <img src="https://placehold.co/400x225/000/ffc400?text=AARON+vs+HYRUKI" alt="Aaron vs Hyruki Highlight" class="video-thumbnail">
+                        <div class="video-info">
+                             <span class="story-category">DBA SPECIAL MATCH</span>
+                            <a href="#">SOROTAN: AARON vs HYRUKI - MAIN EVENT</a>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <img src="https://placehold.co/400x225/000/ffc400?text=RANZT+vs+HIROO" alt="Ranzt vs Hiroo Highlight" class="video-thumbnail">
+                        <div class="video-info">
+                            <span class="story-category">PEREBUTAN GELAR</span>
+                            <a href="#">SOROTAN: RANZT vs HIROO - MID TIER KING</a>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <img src="https://placehold.co/400x225/000/ffc400?text=DBA+2+Recap" alt="DBA 2 Recap" class="video-thumbnail">
+                        <div class="video-info">
+                            <span class="story-category">REKAP ACARA</span>
+                            <a href="#">REKAP LENGKAP: SEMUA LAGA DARI DBA 2</a>
+                        </div>
+                    </div>
                 </div>
+                <button class="more-videos-btn">LIHAT SEMUA VIDEO</button>
             </div>
-        </section>
-
-        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 60px;">
-            <section class="latest-stories-section">
-                <h2>Latest Stories</h2>
-                <div id="latest-stories-list">
-                    <div class="story-item">
-                        <span class="story-date">Sep 28, 2025</span>
-                        <span class="story-category">News</span>
-                        <a href="#">Rekor Pertarungan Debater Setelah DBA Special Match</a>
-                    </div>
-                    <div class="story-item">
-                        <span class="story-date">Sep 25, 2025</span>
-                        <span class="story-category">Rankings</span>
-                        <a href="#">Perubahan Peringkat Divisi Mid Tier Pasca Kemenangan Ranzt</a>
-                    </div>
-                    <div class="story-item">
-                        <span class="story-date">Sep 20, 2025</span>
-                        <span class="story-category">Analysis</span>
-                        <a href="#">Analisis Mendalam: Kemenangan Cepat Yulz atas Kazz</a>
-                    </div>
-                </div>
-                <a href="news.html#news" class="more-stories-btn">More Stories</a>
-            </section>
-            
-            <section class="videos-section">
-                <h2>Video Highlights</h2>
-                <div class="video-grid" id="video-highlights-grid">
-                    <div class="video-item">
-                        <img src="assets/img/video-thumb-1.jpg" alt="Video Highlight" class="video-thumbnail">
-                        <div class="video-info">
-                            <span class="story-date">DBA Special Match</span>
-                            <a href="#">Full Bout: AARON vs HYRUKI</a>
-                        </div>
-                    </div>
-                    <div class="video-item">
-                        <img src="assets/img/video-thumb-2.jpg" alt="Video Highlight" class="video-thumbnail">
-                        <div class="video-info">
-                            <span class="story-date">DBA 2</span>
-                            <a href="#">Highlight: AHENG vs PRATAMA - Knockout Cepat</a>
-                        </div>
-                    </div>
-                    <div class="video-item">
-                        <img src="assets/img/video-thumb-3.jpg" alt="Video Highlight" class="video-thumbnail">
-                        <div class="video-info">
-                            <span class="story-date">DBA 1</span>
-                            <a href="#">Full Bout: HIROO vs RENJI</a>
-                        </div>
-                    </div>
-                </div>
-                <a href="news.html#videos" class="more-videos-btn">More Videos</a>
-            </section>
         </div>
-
     </main>
 
     <footer class="main-footer">
-        <a href="#top" class="scroll-to-top">Back To Top <i class="fas fa-chevron-up"></i></a>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+        <div class="container">
+            <a href="#top" class="scroll-to-top">KEMBALI KE ATAS</a>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2025 DEBATER BATTLE ARENA. Semua Hak Cipta Dilindungi.</p>
         </div>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Contact</a>
-        </div>
-        <p>&copy; 2025 DBA Debater Battle Arena. All Rights Reserved.</p>
     </footer>
 
-    <style>
-        /* CSS Tambahan untuk Desktop Dropdown */
-        .desktop-dropdown {
-            position: relative;
-        }
-        .submenu-desktop {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: var(--color-tertiary-bg);
-            list-style: none;
-            min-width: 150px;
-            padding: 10px 0;
-            z-index: 1000;
-            border-top: 3px solid var(--color-accent-gold);
-        }
-        .desktop-dropdown:hover .submenu-desktop {
-            display: block;
-        }
-        .submenu-desktop li {
-            margin: 0;
-        }
-        .submenu-desktop li a {
-            padding: 8px 15px;
-            font-size: 0.9em;
-            font-weight: 400;
-            display: block;
-        }
-    </style>
+    <script src="script.js"></script>
 </body>
 </html>
