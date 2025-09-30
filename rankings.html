@@ -1,18 +1,101 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peringkat - DBA: Debater Battle Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 <body>
+
+    <header class="main-header">
+         <div class="container header-content">
+            <a href="index.html" class="logo">DBA</a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="events.html">Acara</a></li>
+                    <li><a href="debaters.html">Debater</a></li>
+                    <li><a href="rankings.html">Peringkat</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="menu-toggle-btn" aria-label="Toggle Menu">
+                    <i class="fas fa-bars menu-icon-open"></i>
+                    <i class="fas fa-times menu-icon-close"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav">
+        </nav>
+
     <main class="container">
-        <h1 class="page-title">DBA OFFICIAL RANKINGS</h1>
-        <p class="ranking-intro">Peringkat ini diperbarui secara dinamis berdasarkan kemenangan, kekalahan, dan aktivitas debater di setiap divisi.</p>
+        <h1 class="page-title">Peringkat Resmi DBA</h1>
+        <p class="ranking-intro">Peringkat resmi Debater Battle Arena diperbarui setelah setiap acara. Pilih divisi untuk melihat daftar lengkap.</p>
 
         <div class="weight-class-tabs">
-            </div>
+            <button class="tab-button active" data-target="high-tier">High Tier</button>
+            <button class="tab-button" data-target="mid-tier">Mid Tier</button>
+            <button class="tab-button" data-target="low-tier">Low Tier</button>
+        </div>
 
-        <div id="ranking-sections">
+        <section id="high-tier" class="ranking-division active">
+            <div class="champion-card">
+                <span class="rank-label">Raja Divisi</span>
+                <span class="champion-name">LIANX</span>
+                <span class="champion-belt"><i class="fas fa-crown"></i> HIGH TIER</span>
             </div>
+            <div class="ranked-list">
+                <div class="ranked-item"><span class="rank-number">1</span><span class="ranked-athlete">AARON</span><span class="athlete-country">🇲🇽</span></div>
+                <div class="ranked-item"><span class="rank-number">2</span><span class="ranked-athlete">AHENG</span><span class="athlete-country">🇮🇩</span></div>
+                <div class="ranked-item"><span class="rank-number">3</span><span class="ranked-athlete">KARIZ</span><span class="athlete-country">🇮🇩</span></div>
+                <div class="ranked-item"><span class="rank-number">4</span><span class="ranked-athlete">ZOGRATIS</span><span class="athlete-country">🇮🇩</span></div>
+                <div class="ranked-item"><span class="rank-number">5</span><span class="ranked-athlete">RYUU</span><span class="athlete-country">🇲🇾</span></div>
+                <div class="ranked-item"><span class="rank-number">6</span><span class="ranked-athlete">SHADE</span><span class="athlete-country">🇲🇾</span></div>
+                <div class="ranked-item"><span class="rank-number">7</span><span class="ranked-athlete">ADYY</span><span class="athlete-country">🇲🇾</span></div>
+                <div class="ranked-item"><span class="rank-number">8</span><span class="ranked-athlete">ARYANWT</span><span class="athlete-country">🇮🇩</span></div>
+                <div class="ranked-item"><span class="rank-number">9</span><span class="ranked-athlete">KYUKI</span><span class="athlete-country">🇲🇾</span></div>
+                <div class="ranked-item"><span class="rank-number">10</span><span class="ranked-athlete">MUCHIBEI</span><span class="athlete-country">🇲🇾</span></div>
+            </div>
+        </section>
+
+        <section id="mid-tier" class="ranking-division">
+             <div class="champion-card">
+                <span class="rank-label">Raja Divisi</span>
+                <span class="champion-name">RANZT</span>
+                <span class="champion-belt"><i class="fas fa-crown"></i> MID TIER</span>
+            </div>
+            <div class="ranked-list">
+                <div class="ranked-item"><span class="rank-number">1</span><span class="ranked-athlete">YULZ</span><span class="athlete-country">🇮🇩</span></div>
+                <div class="ranked-item"><span class="rank-number">2</span><span class="ranked-athlete">HIROO</span><span class="athlete-country">🇮🇩</span></div>
+                <div class="ranked-item"><span class="rank-number">3</span><span class="ranked-athlete">KAZZ</span><span class="athlete-country">🇵🇭</span></div>
+                <div class="ranked-item"><span class="rank-number">4</span><span class="ranked-athlete">RENJI</span><span class="athlete-country">🇲🇾</span></div>
+            </div>
+        </section>
+
+        <section id="low-tier" class="ranking-division">
+             <div class="champion-card">
+                <span class="rank-label">Raja Divisi</span>
+                <span class="champion-name">VACANT</span>
+                <span class="champion-belt"><i class="fas fa-crown"></i> LOW TIER</span>
+            </div>
+            <div class="ranked-list">
+                <div class="ranked-item"><span class="rank-number">1</span><span class="ranked-athlete">ARYANWT</span><span class="athlete-country">🇮🇩</span></div>
+                <div class="ranked-item"><span class="rank-number">2</span><span class="ranked-athlete">THINZEL</span><span class="athlete-country">🇮🇩</span></div>
+                <div class="ranked-item"><span class="rank-number">3</span><span class="ranked-athlete">RIM</span><span class="athlete-country">🇲🇾</span></div>
+                <div class="ranked-item"><span class="rank-number">4</span><span class="ranked-athlete">SHADE</span><span class="athlete-country">🇲🇾</span></div>
+            </div>
+        </section>
 
     </main>
-    </body>
+
+    <footer class="main-footer">
+        </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
