@@ -118,3 +118,41 @@ const RANKINGS_DATA = {
 
 // Map untuk mencari debater berdasarkan nama dengan cepat (diisi oleh script.js)
 const DEBATER_MAP = {}; 
+// assets/js/data.js (LANJUTAN)
+
+// --- Data untuk Halaman Beranda (Home) ---
+const HOME_DATA = {
+    mainStory: {
+        category: "NEWS",
+        title: "LIANX VS RANZT: 'SUPER MAIN EVENT' DI DBA 3 AKAN MENJADI PENENTU RAJA MID TIER!",
+        link: "#",
+        img: "assets/img/main-story-lianxvranzt.jpg" // PASTIKAN FILE INI ADA!
+    },
+    subStories: [
+        { category: "VIDEO", title: "AARON DOMINASI HYRUKI DI MAIN EVENT DBA SPECIAL MATCH", link: "#", img: "assets/img/sub-story-aaron.jpg" },
+        { category: "NEWS", title: "PROFIL DEBATER: KARIZ, BINTANG BARU DIVISI HIGH TIER DARI INDONESIA", link: "#", img: "assets/img/sub-story-kariz.jpg" },
+        { category: "RANKINGS", title: "UPDATE PERINGKAT: SIAPA YANG MENDEKATI TAHTA RAJA DIVISI?", link: "#", img: "assets/img/sub-story-rank.jpg" },
+    ],
+    featuredDebater: {
+        name: "AARON",
+        title: "THE AMERICAN NIGHTMARE",
+        tier: "HIGH TIER",
+        link: "debater_profile_detail.html?name=AARON",
+        img: "assets/img/featured-aaron.jpg"
+    }
+};
+
+// --- Data Berita & Video (Tambahkan ke data.js) ---
+const STORIES_DATA = [
+    { date: "Sep 28, 2025", category: "News", title: "REKOR PERTARUNGAN DEBATER SETELAH DBA SPECIAL MATCH", link: "#" },
+    { date: "Sep 25, 2025", category: "Rankings", title: "PERUBAHAN PERINGKAT DIVISI MID TIER PASCA KEMENANGAN RANZT", link: "#" },
+    { date: "Sep 20, 2025", category: "Analysis", title: "MENDALAMI KEMENANGAN CEPAT YULZ ATAS KAZZ", link: "#" },
+];
+
+const VIDEO_HIGHLIGHTS = [
+    { event: "DBA 2", title: "Highlight: AHENG vs PRATAMA - Knockout Cepat", img: "assets/img/video-aheng.jpg", link: "#" },
+    { event: "DBA 1", title: "Full Bout: HIROO vs RENJI", img: "assets/img/video-hiroo.jpg", link: "#" },
+    // Tambahkan video lain di sini...
+];
+
+// Pastikan kode render di script.js sudah di-update untuk membaca data di atas.
