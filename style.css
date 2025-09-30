@@ -1,0 +1,442 @@
+/* --- Variabel CSS & Reset Lanjutan --- */
+:root {
+    --color-dark-bg: #0d0d0d;
+    --color-secondary-bg: #1a1a1a;
+    --color-tertiary-bg: #2b2b2b; /* Sedikit lebih terang untuk hover */
+    --color-primary-text: #ffffff;
+    --color-secondary-text: #b3b3b3;
+    --color-accent-gold: #ffc400;
+    --font-primary: 'Oswald', Impact, sans-serif;
+    --font-secondary: 'Roboto', Arial, sans-serif;
+    --header-height: 65px;
+    --border-radius: 6px; /* BARU: Untuk konsistensi sudut */
+    --transition-speed: 0.3s; /* BARU: Untuk konsistensi animasi */
+}
+
+/* --- Pengaturan Global & Dasar --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* BARU: Scroll lebih mulus saat klik anchor link */
+}
+
+body {
+    font-family: var(--font-secondary);
+    background-color: var(--color-dark-bg);
+    color: var(--color-primary-text);
+    line-height: 1.6; /* DITINGKATKAN: Sedikit lebih lega untuk keterbacaan */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--color-primary-text);
+    text-decoration: none;
+    transition: color var(--transition-speed), opacity var(--transition-speed);
+}
+
+a:hover {
+    color: var(--color-accent-gold);
+}
+
+/* --- Tipografi Profesional --- */
+h1, h2, h3 {
+    font-family: var(--font-primary);
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* BARU: Menambah kedalaman */
+}
+
+h2 {
+    font-size: 2.4em;
+    margin-top: 50px;
+    margin-bottom: 25px; /* DITINGKATKAN: Jarak lebih konsisten */
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-tertiary-bg);
+    color: var(--color-primary-text);
+}
+
+.page-title {
+    font-size: 3.2em;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 35px;
+    color: var(--color-accent-gold);
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* DITINGKATKAN: Efek lebih kuat */
+}
+
+/* --- Header & Navigasi Modern --- */
+.main-header {
+    background-color: rgba(13, 13, 13, 0.85); /* DITINGKATKAN: Transparansi halus */
+    backdrop-filter: blur(10px); /* BARU: Efek blur modern */
+    border-bottom: 1px solid var(--color-secondary-bg);
+    position: sticky;
+    top: 0;
+    z-index: 2001;
+    transition: background-color var(--transition-speed);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+}
+
+.logo {
+    font-size: 2.5em;
+    font-weight: 900;
+    letter-spacing: -4px;
+    color: var(--color-accent-gold); /* DITINGKATKAN: Logo lebih menonjol */
+    transition: transform var(--transition-speed);
+}
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.desktop-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.desktop-nav li {
+    margin-left: 35px;
+}
+
+.desktop-nav a {
+    font-weight: bold;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    padding: 10px 0;
+    position: relative; /* BARU: Untuk pseudo-element hover */
+}
+
+/* EFEK HOVER BARU untuk navigasi desktop */
+.desktop-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-accent-gold);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--transition-speed) ease-in-out;
+}
+
+.desktop-nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+.header-actions button {
+    background: transparent;
+    border: none;
+    color: var(--color-primary-text);
+    font-size: 1.4em;
+    cursor: pointer;
+    margin-left: 15px;
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+.header-actions button:hover {
+    color: var(--color-accent-gold);
+    transform: scale(1.1);
+}
+
+.menu-toggle-btn { display: none; z-index: 2002; }
+.menu-icon-close { display: none; }
+body.menu-open .menu-icon-open { display: none; }
+body.menu-open .menu-icon-close { display: block; color: var(--color-accent-gold); }
+
+/* --- Navigasi Mobile (Struktur Asli Dipertahankan) --- */
+.mobile-nav {
+    position: fixed; top: 0; left: 0; 
+    width: 100%; height: 100vh;
+    background-color: var(--color-dark-bg);
+    z-index: 999;
+    transform: translateX(100%); 
+    transition: transform 0.4s ease-in-out;
+    padding-top: var(--header-height);
+    overflow-y: auto;
+}
+body.menu-open .mobile-nav { transform: translateX(0); }
+.mobile-menu-list { list-style: none; padding: 0 30px; }
+.mobile-menu-list > li { border-bottom: 1px solid var(--color-secondary-bg); }
+.mobile-menu-list a { display: block; padding: 15px 0; font-size: 1.2em; font-weight: 700; color: var(--color-primary-text); text-transform: uppercase; }
+.mobile-menu-list a i { margin-right: 15px; color: var(--color-accent-gold); }
+.mobile-submenu { list-style: none; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out; background-color: var(--color-secondary-bg); }
+.mobile-submenu li a { padding: 10px 0 10px 45px; font-size: 1em; font-weight: 400; color: var(--color-secondary-text); }
+.mobile-dropdown-toggle > a i { float: right; transition: transform 0.3s; }
+.mobile-dropdown-toggle.active > a i { transform: rotate(180deg); }
+.mobile-social-footer { padding: 30px; text-align: center; border-top: 1px solid var(--color-secondary-bg); margin-top: 30px; }
+.mobile-social-footer a { font-size: 1.8em; margin: 0 15px; color: var(--color-secondary-text); }
+
+/* --- Hero Section & Card Utama --- */
+.hero-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 20px;
+    padding: 25px 20px;
+    max-width: 1280px;
+    margin: 20px auto;
+    background-color: #000;
+}
+
+.main-story-card, .sub-story-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: var(--border-radius); /* BARU */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* BARU */
+}
+
+.main-story-img, .sub-story-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease; /* DITINGKATKAN */
+}
+
+.main-story-card:hover .main-story-img, .sub-story-card:hover .sub-story-img {
+    transform: scale(1.05);
+    filter: brightness(0.8);
+}
+.main-story-card { height: 500px; }
+.sub-story-card .sub-story-img { filter: brightness(0.65); }
+
+.story-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.0) 100%);
+    transition: all var(--transition-speed);
+}
+.category-tag {
+    font-size: 0.8em; font-weight: 700; color: var(--color-accent-gold);
+    background-color: rgba(0, 0, 0, 0.7); padding: 3px 8px;
+    display: inline-block; margin-bottom: 15px; text-transform: uppercase;
+}
+.main-story-card h1 { font-size: 2em; margin-bottom: 15px; }
+.read-more-btn {
+    font-weight: bold; font-size: 0.9em; color: var(--color-primary-text);
+    display: inline-flex; align-items: center;
+}
+.read-more-btn i { margin-left: 8px; color: var(--color-accent-gold); transition: margin-left 0.2s; }
+.read-more-btn:hover i { margin-left: 15px; }
+.sub-story-grid { display: grid; grid-template-rows: repeat(3, 1fr); gap: 20px; }
+.sub-story-card .story-info {
+    position: absolute; bottom: 0; left: 0; right: 0; padding: 15px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.0) 100%);
+}
+.sub-story-card h2 { font-size: 0.95em; line-height: 1.2; margin: 0; border-bottom: none; padding-bottom: 0; }
+.sub-story-card h2 a:hover { color: var(--color-accent-gold); }
+
+
+/* --- Coming Soon Banner (Timer) --- */
+.coming-soon-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-accent-gold);
+    color: var(--color-dark-bg);
+    padding: 20px 30px;
+    margin: 30px auto;
+    font-family: var(--font-primary);
+    text-transform: uppercase;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 20px rgba(255,196,0,0.2);
+}
+.timer-display { display: flex; align-items: baseline; font-size: 1.1em; }
+.timer-label { font-weight: 900; margin-right: 30px; font-size: 1.1em; }
+.countdown-time { display: flex; align-items: flex-end; }
+.time-unit { display: flex; flex-direction: column; align-items: center; font-size: 3em; line-height: 0.8; margin-right: 25px; font-weight: 900; }
+.time-unit .unit-label { font-size: 0.3em; font-weight: 700; margin-top: 5px; letter-spacing: 1px; opacity: 0.8; }
+.coming-soon-banner .buy-tickets-btn { background-color: var(--color-dark-bg); color: var(--color-accent-gold); padding: 12px 25px; font-weight: 700; border: 2px solid var(--color-dark-bg); cursor: pointer; text-transform: uppercase; transition: background-color 0.2s, color 0.2s, transform 0.2s; border-radius: var(--border-radius); }
+.coming-soon-banner .buy-tickets-btn:hover { background-color: var(--color-secondary-bg); color: var(--color-accent-gold); transform: scale(1.05); }
+
+
+/* --- Tombol & Elemen Kontrol --- */
+.more-stories-btn, .more-videos-btn, .btn-tickets, .btn-highlights {
+    display: inline-block;
+    padding: 12px 25px;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease-in-out;
+    text-align: center;
+    background-color: var(--color-secondary-bg);
+    color: var(--color-primary-text);
+    border: 2px solid var(--color-tertiary-bg);
+}
+.more-stories-btn:hover, .more-videos-btn:hover, .btn-tickets:hover, .btn-highlights:hover {
+    background-color: var(--color-tertiary-bg);
+    border-color: var(--color-accent-gold);
+    color: var(--color-accent-gold);
+    box-shadow: 0 5px 15px rgba(255,196,0,0.1);
+    transform: translateY(-3px);
+}
+.more-stories-btn, .more-videos-btn { width: 100%; margin-top: 30px; }
+
+
+/* --- Kartu Debater & Video (Peningkatan Besar) --- */
+.athlete-card, .event-card, .video-item {
+    display: block;
+    background-color: var(--color-secondary-bg);
+    overflow: hidden;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    border: 1px solid var(--color-tertiary-bg);
+    border-radius: var(--border-radius);
+}
+.athlete-card:hover, .event-card:hover, .video-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255,196,0,0.1);
+}
+.card-image-wrapper { height: 350px; overflow: hidden; }
+.athlete-img {
+    width: 100%; height: 100%; object-fit: cover;
+    object-position: top center;
+    filter: grayscale(0.3) brightness(0.8);
+    transition: filter var(--transition-speed), transform var(--transition-speed);
+}
+.athlete-card:hover .athlete-img { filter: grayscale(0) brightness(1.0); transform: scale(1.05); }
+.athlete-info { padding: 20px; text-align: center; }
+.athlete-name { font-family: var(--font-primary); font-size: 1.5em; display: block; text-transform: uppercase; color: var(--color-primary-text); line-height: 1.2; }
+.athlete-class { font-size: 0.85em; color: var(--color-accent-gold); display: block; margin-top: 5px; font-weight: 700; }
+.video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.video-thumbnail { width: 100%; height: auto; display: block; }
+.video-info { padding: 15px; }
+.video-info a { font-weight: 700; line-height: 1.3; font-size: 1em; display: block; margin-top: 5px; text-transform: none; }
+.story-item { padding: 18px 0; border-bottom: 1px solid var(--color-secondary-bg); display: flex; align-items: center; }
+.story-item a { flex-grow: 1; font-weight: 700; font-size: 1.1em; text-transform: uppercase; }
+.story-category, .story-date { font-size: 0.75em; margin-right: 15px; color: var(--color-secondary-text); font-weight: 700; }
+.story-category { color: var(--color-accent-gold); }
+
+
+/* --- Footer & Scroll To Top --- */
+.main-footer { background-color: var(--color-dark-bg); padding: 40px 0 20px; text-align: center; border-top: 2px solid var(--color-secondary-bg); }
+.scroll-to-top { font-weight: bold; display: inline-block; margin-bottom: 25px; color: var(--color-secondary-text); text-transform: uppercase; font-size: 0.9em; padding-bottom: 5px; border-bottom: 1px solid transparent; }
+.scroll-to-top:hover { color: var(--color-primary-text); border-bottom: 1px solid var(--color-primary-text); }
+.social-links a { font-size: 1.5em; margin: 0 10px; opacity: 0.7; transition: transform var(--transition-speed), opacity var(--transition-speed); }
+.social-links a:hover { color: var(--color-accent-gold); opacity: 1; transform: scale(1.2); }
+.main-footer p { font-size: 0.75em; margin-top: 20px; color: var(--color-secondary-text); }
+.footer-links a { font-size: 0.8em; margin: 0 10px; color: var(--color-secondary-text); text-transform: uppercase; }
+
+
+/* --- Halaman Atlet, Peringkat, Acara --- */
+.athlete-controls, .media-controls { display: flex; justify-content: space-between; align-items: center; background-color: var(--color-secondary-bg); padding: 15px 20px; margin-bottom: 30px; border-radius: var(--border-radius); }
+.search-bar { position: relative; flex-grow: 1; max-width: 400px; margin-right: 20px; }
+.search-bar input, .custom-select {
+    width: 100%; padding: 12px 15px 12px 45px;
+    border: 1px solid var(--color-tertiary-bg); background-color: var(--color-dark-bg);
+    color: var(--color-primary-text); font-size: 1em;
+    border-radius: var(--border-radius);
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+.search-bar i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--color-secondary-text); z-index: 1; transition: color var(--transition-speed); }
+.search-bar input:focus + i { color: var(--color-accent-gold); }
+.search-bar input:focus, .custom-select:focus { outline: none; border-color: var(--color-accent-gold); box-shadow: 0 0 10px rgba(255, 196, 0, 0.3); }
+.filters { display: flex; gap: 15px; }
+.custom-select { padding-left: 15px; padding-right: 30px; cursor: pointer; font-weight: 700; text-transform: uppercase; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right 10px top 50%; background-size: 10px auto; }
+.athlete-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding-bottom: 50px; }
+
+
+/* --- Peringkat & Tab --- */
+.ranking-intro { text-align: center; margin-bottom: 40px; color: var(--color-secondary-text); }
+.weight-class-tabs, .events-tab-navigation { display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 30px; border-bottom: 1px solid var(--color-secondary-bg); }
+.tab-button, .event-tab-btn {
+    background: none; border: none; padding: 15px 25px; color: var(--color-secondary-text);
+    font-family: var(--font-primary); font-size: 1.1em; text-transform: uppercase;
+    cursor: pointer; position: relative; transition: color var(--transition-speed);
+}
+.tab-button::after, .event-tab-btn::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 3px;
+    background-color: var(--color-accent-gold); transform: scaleX(0);
+    transition: transform var(--transition-speed) ease-in-out;
+}
+.tab-button:hover, .event-tab-btn:hover { color: var(--color-primary-text); }
+.tab-button.active, .event-tab-btn.active { color: var(--color-accent-gold); }
+.tab-button.active::after, .event-tab-btn.active::after { transform: scaleX(1); }
+
+.ranking-division, .events-list-section { display: none; padding: 20px 0; }
+.ranking-division.active, .events-list-section.active { display: block; animation: fadeIn 0.5s ease-in-out; }
+.champion-card { display: flex; justify-content: space-between; align-items: center; background-color: #000; border: 2px solid var(--color-accent-gold); padding: 15px 25px; margin-bottom: 30px; box-shadow: 0 0 20px rgba(255, 196, 0, 0.2); border-radius: var(--border-radius); }
+.rank-label { font-size: 1.2em; font-family: var(--font-primary); color: var(--color-accent-gold); }
+.champion-name { font-size: 1.5em; font-family: var(--font-primary); flex-grow: 1; text-align: center; }
+.champion-belt { color: var(--color-accent-gold); font-weight: 700; }
+.ranked-list { background-color: var(--color-secondary-bg); padding: 10px 0; border-radius: var(--border-radius); }
+.ranked-item { display: flex; align-items: center; padding: 15px 25px; border-bottom: 1px solid var(--color-tertiary-bg); transition: background-color 0.2s; }
+.ranked-item:hover { background-color: var(--color-tertiary-bg); }
+.rank-number { font-size: 1.8em; font-family: var(--font-primary); width: 60px; color: var(--color-accent-gold); }
+.ranked-athlete { flex-grow: 1; font-size: 1.1em; font-weight: 700; text-transform: uppercase; }
+.athlete-country { font-size: 0.9em; color: var(--color-secondary-text); font-weight: 700; }
+
+/* --- Halaman Acara --- */
+.section-heading-detail { font-size: 2em; margin-top: 60px; margin-bottom: 30px; border-bottom: 2px solid var(--color-accent-gold); display: inline-block; padding-bottom: 10px; }
+.events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding-bottom: 60px; }
+.event-image-area { position: relative; height: 200px; overflow: hidden; }
+.event-banner-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8); transition: transform var(--transition-speed); }
+.event-card:hover .event-banner-img { transform: scale(1.05); }
+.event-type-tag { position: absolute; top: 15px; left: 0; background-color: var(--color-accent-gold); color: var(--color-dark-bg); font-family: var(--font-primary); padding: 5px 15px; font-size: 0.9em; }
+.event-status { position: absolute; bottom: 15px; right: 15px; color: var(--color-primary-text); background-color: rgba(0, 0, 0, 0.7); padding: 5px 10px; font-size: 0.8em; font-weight: bold; border-radius: 4px; }
+.event-info-box { padding: 20px 15px; }
+.event-date { display: block; color: var(--color-accent-gold); font-size: 0.9em; font-weight: 700; margin-bottom: 10px; }
+.event-title { font-size: 1.6em; margin: 0 0 10px 0; line-height: 1.1; }
+.event-location { color: var(--color-secondary-text); font-size: 0.9em; margin-bottom: 15px; }
+.event-location i { margin-right: 5px; }
+
+/* --- Animasi --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Media Queries (Responsif) --- */
+@media (max-width: 1024px) {
+    .hero-section { grid-template-columns: 1fr; gap: 15px; }
+    .main-story-card { height: 350px; }
+    .sub-story-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); grid-template-rows: unset; }
+    .video-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .desktop-nav { display: none; }
+    .menu-toggle-btn { display: block; }
+    .page-title { font-size: 2.5em; }
+    h2 { font-size: 2em; }
+    .coming-soon-banner { flex-direction: column; align-items: flex-start; padding: 15px; }
+    .timer-display { width: 100%; justify-content: space-between; margin-bottom: 10px; }
+    .time-unit { font-size: 2.2em; }
+    .coming-soon-banner .buy-tickets-btn { margin-top: 10px; width: 100%; text-align: center; }
+    .video-grid { grid-template-columns: 1fr; }
+    .athlete-controls { flex-direction: column; align-items: stretch; }
+    .search-bar { max-width: none; margin-right: 0; margin-bottom: 15px; }
+    .filters { flex-direction: column; gap: 10px; }
+    .custom-select { width: 100%; }
+    .champion-card { flex-direction: column; text-align: center; }
+    .champion-name { margin: 10px 0; }
+    .rank-number { font-size: 1.5em; width: 40px; }
+}
+
