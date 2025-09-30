@@ -1,32 +1,153 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debater - DBA: Debater Battle Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 <body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">DBA</a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="events.html">Acara</a></li>
+                    <li><a href="debaters.html">Debater</a></li>
+                    <li><a href="rankings.html">Peringkat</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="menu-toggle-btn" aria-label="Toggle Menu">
+                    <i class="fas fa-bars menu-icon-open"></i>
+                    <i class="fas fa-times menu-icon-close"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav">
+        </nav>
+
     <main class="container">
-        <h1 class="page-title">ALL DEBATER PROFILES</h1>
-        <p class="ranking-intro">Telusuri profil dan rekor pertarungan dari semua debater resmi DBA.</p>
-        
+        <h1 class="page-title">DAFTAR DEBATER</h1>
+
         <div class="athlete-controls">
             <div class="search-bar">
                 <i class="fas fa-search"></i>
-                <input type="text" placeholder="Cari Debater (Nama)">
+                <input type="text" placeholder="Cari Debater...">
             </div>
             <div class="filters">
-                <select id="division-filter" class="custom-select">
-                    <option value="all">Semua Divisi</option>
-                    </select>
-                <select id="status-filter" class="custom-select">
-                    <option value="all">Semua Status</option>
-                    <option value="ACTIVE">ACTIVE</option>
-                    <option value="INACTIVE">INACTIVE</option>
+                <select class="custom-select">
+                    <option value="">SEMUA NEGARA</option>
+                    <option value="ID">Indonesia</option>
+                    <option value="MY">Malaysia</option>
+                    <option value="US">Amerika</option>
+                    <option value="EU">Eropa</option>
+                </select>
+                <select class="custom-select">
+                    <option value="">SEMUA STATUS</option>
+                    <option value="active">Aktif</option>
+                    <option value="inactive">Tidak Aktif</option>
                 </select>
             </div>
         </div>
 
-        <div class="athlete-grid" id="athlete-grid">
-            </div>
+        <div class="athlete-grid">
+            <a href="#" class="athlete-card">
+                <div class="card-image-wrapper"><img src="https://placehold.co/300x400/1a1a1a/ffffff?text=AARON" alt="AARON" class="athlete-img"></div>
+                <div class="athlete-info">
+                    <span class="athlete-name">AARON 🇲🇽</span>
+                    <span class="athlete-class">REKOR: 2W - 0L - 0D</span>
+                </div>
+            </a>
+             <a href="#" class="athlete-card">
+                <div class="card-image-wrapper"><img src="https://placehold.co/300x400/1a1a1a/ffffff?text=LIANX" alt="LIANX" class="athlete-img"></div>
+                <div class="athlete-info">
+                    <span class="athlete-name">LIANX 🇮🇩</span>
+                    <span class="athlete-class">REKOR: 1W - 0L - 0D</span>
+                </div>
+            </a>
+            <a href="#" class="athlete-card">
+                <div class="card-image-wrapper"><img src="https://placehold.co/300x400/1a1a1a/ffffff?text=RANZT" alt="RANZT" class="athlete-img"></div>
+                <div class="athlete-info">
+                    <span class="athlete-name">RANZT 🇮🇩</span>
+                    <span class="athlete-class">REKOR: 2W - 0L - 0D</span>
+                </div>
+            </a>
+             <a href="#" class="athlete-card">
+                <div class="card-image-wrapper"><img src="https://placehold.co/300x400/1a1a1a/ffffff?text=AHENG" alt="AHENG" class="athlete-img"></div>
+                <div class="athlete-info">
+                    <span class="athlete-name">AHENG 🇮🇩</span>
+                    <span class="athlete-class">REKOR: 2W - 0L - 0D</span>
+                </div>
+            </a>
+            <a href="#" class="athlete-card">
+                <div class="card-image-wrapper"><img src="https://placehold.co/300x400/1a1a1a/ffffff?text=KARIZ" alt="KARIZ" class="athlete-img"></div>
+                <div class="athlete-info">
+                    <span class="athlete-name">KARIZ 🇮🇩</span>
+                    <span class="athlete-class">REKOR: 1W - 0L - 0D</span>
+                </div>
+            </a>
+             <a href="#" class="athlete-card">
+                <div class="card-image-wrapper"><img src="https://placehold.co/300x400/1a1a1a/ffffff?text=YULZ" alt="YULZ" class="athlete-img"></div>
+                <div class="athlete-info">
+                    <span class="athlete-name">YULZ 🇮🇩</span>
+                    <span class="athlete-class">REKOR: 1W - 0L - 0D</span>
+                </div>
+            </a>
+            <a href="#" class="athlete-card">
+                <div class="card-image-wrapper"><img src="https://placehold.co/300x400/1a1a1a/ffffff?text=HIROO" alt="HIROO" class="athlete-img"></div>
+                <div class="athlete-info">
+                    <span class="athlete-name">HIROO 🇮🇩</span>
+                    <span class="athlete-class">REKOR: 1W - 1L - 0D</span>
+                </div>
+            </a>
+            <a href="#" class="athlete-card">
+                <div class="card-image-wrapper"><img src="https://placehold.co/300x400/1a1a1a/ffffff?text=ZOGRATIS" alt="ZOGRATIS" class="athlete-img"></div>
+                <div class="athlete-info">
+                    <span class="athlete-name">ZOGRATIS 🇮🇩</span>
+                    <span class="athlete-class">REKOR: 1W - 1L - 0D</span>
+                </div>
+            </a>
+            <a href="#" class="athlete-card">
+                <div class="card-image-wrapper"><img src="https://placehold.co/300x400/1a1a1a/ffffff?text=ARYANWT" alt="ARYANWT" class="athlete-img"></div>
+                <div class="athlete-info">
+                    <span class="athlete-name">ARYANWT 🇮🇩</span>
+                    <span class="athlete-class">REKOR: 1W - 1L - 0D</span>
+                </div>
+            </a>
+            <a href="#" class="athlete-card">
+                <div class="card-image-wrapper"><img src="https://placehold.co/300x400/1a1a1a/ffffff?text=RYUU" alt="RYUU" class="athlete-img"></div>
+                <div class="athlete-info">
+                    <span class="athlete-name">RYUU 🇲🇾</span>
+                    <span class="athlete-class">REKOR: 1W - 1L - 0D</span>
+                </div>
+            </a>
+            <a href="#" class="athlete-card">
+                <div class="card-image-wrapper"><img src="https://placehold.co/300x400/1a1a1a/ffffff?text=ADYY" alt="ADYY" class="athlete-img"></div>
+                <div class="athlete-info">
+                    <span class="athlete-name">ADYY 🇲🇾</span>
+                    <span class="athlete-class">REKOR: 1W - 2L - 0D</span>
+                </div>
+            </a>
+            <a href="#" class="athlete-card">
+                <div class="card-image-wrapper"><img src="https://placehold.co/300x400/1a1a1a/ffffff?text=HYRUKI" alt="HYRUKI" class="athlete-img"></div>
+                <div class="athlete-info">
+                    <span class="athlete-name">HYRUKI 🇮🇹</span>
+                    <span class="athlete-class">REKOR: 0W - 1L - 0D</span>
+                </div>
+            </a>
+        </div>
+    </main>
 
-        </main>
-    </body>
+    <footer class="main-footer">
+        </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
